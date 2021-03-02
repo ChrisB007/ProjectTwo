@@ -4,7 +4,7 @@
 ---
 **BoxOff** is an app that allows its users to predict which movie will rule the weekend box office. The prediction is based on few factors:
 1. Lead Actors | Actresses
-2. Director
+2. Directors
 3. Number of Thearters
 4. Release dates
 
@@ -34,7 +34,7 @@ The app is based off an API provided The Movie Database
 
 **Stretch goals**
 ---
-- Ability to make insightful predictions based on production factors 
+- Ability to make insightful predictions based on factors surrounding production, actor's stats, budgets, director's stats
 - Email notification
 
 
