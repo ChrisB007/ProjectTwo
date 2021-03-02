@@ -21,12 +21,12 @@ The app is based off an API provided The Movie Database
     App user(s)
         - User(s) are able to visit the site and run searches based on movie titles or categories.
         - User(s) can choose one or many movies to predict as box office winner.
-        - Upon selection, full movie details are shown to user(s) (Actors, Directors, Budget e.t.c)
-        - In order to participate and make educated guesses user(s) must establish accounts to gain access
+        - Upon selection, full movie details are shown to user(s) (Actors, Directors, Budget e.t.c) to help users make educated guesses.
+        - In order to participate, user(s) must establish accounts to gain full access
 
 **Technologies used (including APIs)**
 ---
-- This is a Node / Express app that fetches data using [TMDB](https://www.themoviedb.org/) database API resources.<br>
+- This is a Node / Express app that fetches data using [TMDB](https://www.themoviedb.org/) and [Box Office Mojo](https://www.boxofficemojo.com//) API resources.<br>
 - Database - ProgreSQL.
 - Node.js ORM - Sequelize.
 
@@ -56,7 +56,7 @@ The app is based off an API provided The Movie Database
 
 **Database ERD**
 ---
-![alt text](images/erd.png)
+![alt text](images/erdme.png)
 
 
 **RESTful routing chart**
