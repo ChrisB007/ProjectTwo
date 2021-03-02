@@ -1,0 +1,28 @@
+{
+  "name": "realtrends",
+  "version": "1.0.0",
+  "description": "**Description** --- **realTrends** is an app that allow its users to run searches, and get insights on what is currently popular in the news, entertainment, fashion, and markets based on Google search. - Google Trends - [Google Trends](https://trends.google.com/trends/?geo=US)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChrisB007/ProjectTwo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ChrisB007/ProjectTwo/issues"
+  },
+  "homepage": "https://github.com/ChrisB007/ProjectTwo#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "express": "^4.17.1",
+    "google-trends-api": "^4.9.2",
+    "nodemon": "^2.0.7",
+    "pg": "^8.5.1",
+    "rowdy-logger": "^1.0.2",
+    "sequelize": "^6.5.0"
+  }
+}
