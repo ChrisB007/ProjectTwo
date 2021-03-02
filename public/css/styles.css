@@ -1,0 +1,46 @@
+body{
+    background-image: linear-gradient(to right top, #0f1218, #15171c, #1a1c1f, #1f2123, #252627);
+}
+.navclass{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 150px;
+    margin: auto;
+}
+.container{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: auto;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+div#bodyid {
+    background: #000;
+    width: 100%;
+    height: 650px;
+}
+
+img#logo {
+    width: 134px;
+    border-radius: 20px;
+}
+
+.logocontainer{
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 74%;
+}
+
+li.lists {
+    display: inline;
+    float: left;
+    color: #fff;
+    text-decoration: none;
+    margin-right: 28px;
+    margin-top: 5px;
+}

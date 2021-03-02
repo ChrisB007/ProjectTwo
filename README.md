@@ -45,24 +45,24 @@ The app is based off an API provided The Movie Database
 
 **Wireframes**
 ---
-![alt text](images/index.png)
+![alt text](public/images/index.png)
 
-![alt text](images/box.png)
+![alt text](public/images/box.png)
 
-![alt text](images/login.png)
+![alt text](public/images/login.png)
 
-![alt text](images/dashboatd.png)
+![alt text](public/images/dashboatd.png)
 
 
 **Database ERD**
 ---
-![alt text](images/erdme.png)
+![alt text](public/images/erdme.png)
 
 
 **RESTful routing chart**
 ---
 
-![alt text](images/routes.png)
+![alt text](public/images/routes.png)
 
 
 
