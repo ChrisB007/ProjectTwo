@@ -7,6 +7,9 @@
 2. Directors
 3. Number of Thearters
 4. Release dates
+5. Actors standing in the industry
+
+Note: Winners are determined by weekend box office grosses
 
 The app is based off an API provided The Movie Database
 - TMDB -
@@ -34,8 +37,8 @@ The app is based off an API provided The Movie Database
 
 **Stretch goals**
 ---
-- Ability to make insightful predictions based on factors surrounding production, actor's stats, budgets, director's stats
-- Email notification
+- Ability to make insightful predictions based on factors surrounding production, actor's stats, budgets, director's stats, awards, 
+- Email notification - To let users know who wins
 
 
 
