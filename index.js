@@ -22,7 +22,7 @@ app.get('/', (req, res) => {
 
 //Users page - Shows all user/ activities
 app.get('/users', (req,res) => {
-    console.log('hello');
+    res.render('users',{title: 'Hello'} )
 });
 
 
