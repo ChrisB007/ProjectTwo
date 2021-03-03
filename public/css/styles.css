@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
 body{
     background-image: linear-gradient(to right top, #0f1218, #15171c, #1a1c1f, #1f2123, #252627);
+    margin: 0px;
 }
 .navclass{
     display: flex;
@@ -16,6 +17,9 @@ body{
     align-items: flex-start;
     margin: auto;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    position: fixed;
+    background-image: linear-gradient(to right bottom, #000000, #050404, #0a0909, #0e0d0d, #111110);
+    width: 100%;
 }
 
 .footer{
@@ -30,7 +34,7 @@ div#bodyid {
 }
 
 img#logo {
-    width: 134px;
+    width: 100px;
     border-radius: 20px;
 }
 
@@ -54,7 +58,7 @@ img#logo {
 }
 
 ul.navlist {
-    width: 94%;
+    width: 90%;
     display: flex;
     justify-content: center;
     align-items: center;
