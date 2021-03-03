@@ -1,7 +1,7 @@
 {
-  "name": "realtrends",
+  "name": "boxoff",
   "version": "1.0.0",
-  "description": "**Description** --- **realTrends** is an app that allow its users to run searches, and get insights on what is currently popular in the news, entertainment, fashion, and markets based on Google search. - Google Trends - [Google Trends](https://trends.google.com/trends/?geo=US)",
+  "description": "**Description** --- **BoxOff** is an app that allows",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
