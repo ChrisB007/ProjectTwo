@@ -14,26 +14,39 @@ app.use(express.static("public"));
 app.use(methodOverride('_method'));
 
 
-//Index - lists all movies
+//Index - lists all movies (Done)
 app.get('/', (req, res) => {
       res.render('index', {title: 'Hello'});
 
 });
 
-//Users page - Shows all user/ activities
+//Display Boxoff
+app.get('/boxoff', (req,res)=>{
+    res.render('boxoff', {title: 'boxoff'})
+})
+
+//ALL ABOUT USERS ↓
+
+app.get('/userdashboard', (req,res)=>{
+    res.render('userdashboard', {title: 'dashboard'});
+})
+
+//Users page - Shows all user/ activities (Done)
 app.get('/users', (req,res) => {
     res.render('users',{title: 'Hello'} )
 });
 
 
-//New User login page (form)
-app.get('/users/new', (req, res) =>{
+
+//Creates new user, re-directs to user-account page
+app.get('/users/:new', (req, res) =>{
+    res.render('loginform', {title: 'Login'})
 
 });
 
-//Creates new user, re-directs to user-account page
-app.post('/users', (req, res) =>{
-
+//New User login page (form)
+app.post('/users/:register', (req, res) =>{
+    res.render('loginform', {title: 'Register'})
 });
 
 //Show information about one user
@@ -55,16 +68,6 @@ app.put('/user/:id', (req,res) => {
 app.delete('user/:id', (req, res) =>{
 
 });
-
-
-
-
-
-
-
-
-
-
 
 
 
