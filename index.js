@@ -10,6 +10,7 @@ app.use(express.urlencoded({extended:true}));
 app.set('view engine', 'ejs');
 const beginRowdy = rowdyLogger.begin(app);
 app.use(express.urlencoded({extended: true}));
+app.use(express.json());
 app.use(express.static("public"));
 app.use(methodOverride('_method'));
 
@@ -26,9 +27,6 @@ app.get('/', (req, res) => {
 app.get('/boxoff', (req,res)=>{
     res.render('boxoff', {title: 'boxoff'})
 });
-
-
-
 
 
 

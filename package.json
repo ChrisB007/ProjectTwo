@@ -4,6 +4,7 @@
   "description": "**Description** --- **BoxOff** is an app that allows",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "node index.js"
   },
   "repository": {
@@ -18,6 +19,7 @@
   "homepage": "https://github.com/ChrisB007/ProjectTwo#readme",
   "dependencies": {
     "axios": "^0.21.1",
+    "bcrypt": "^5.0.1",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
     "express-ejs-layouts": "^2.5.0",
@@ -26,6 +28,7 @@
     "nodemon": "^2.0.7",
     "pg": "^8.5.1",
     "rowdy-logger": "^1.0.2",
-    "sequelize": "^6.5.0"
+    "sequelize": "^6.5.0",
+    "sequelize-cli": "^6.2.0"
   }
 }

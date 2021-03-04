@@ -1,0 +1,19 @@
+<%- include('./partials/header.ejs'); -%>
+<div class="container2" id="bodyid2">
+    
+</div>
+<div id="thegrid" class="gridcontainer">
+    <form class="regform" action="/users/register" method="POST">
+        <label for="username" id="regusername" class="formlabel">Username</label>
+        <input class="forminput" type="text" name="username" placeholder="Enter your Username"/>
+        <label for="email" class="formlabel">Email</label>
+        <input class="forminput" type="email" name="email" placeholder="Enter your email"/>
+        <label  for="password" class="formlabel">Password</label>
+        <input class="forminput" type="password" name="password" placeholder="Enter your password"/>
+        <input class="forminput" type="password" name="password" placeholder="Confirm your password"/>
+        <input class="formsubmit" type="submit" value="Submit" name="submit">
+    </form>
+
+</div>
+
+<%- include('./partials/footer.ejs'); -%>
