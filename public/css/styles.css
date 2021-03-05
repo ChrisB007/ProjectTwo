@@ -59,6 +59,16 @@ img#logo {
     align-items: center;
 }
 
+#alreadymembers{
+    margin-top: 15px;
+    color: #ffffff;
+}
+
+#errormessage{
+    color:#ffffff;
+    font-size: larger;
+}
+
 p#wework {
     font-size: 3.1em;
     color: #ffffff;

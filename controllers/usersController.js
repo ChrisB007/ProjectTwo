@@ -5,8 +5,6 @@ const bcrypt = require('bcrypt');
 
 //CRUD routes for Users
 
-const registers = [];
-
 
 //Users page - Shows all user/ activities (Done)
 router.get('/', (req, res) => {
@@ -29,14 +27,40 @@ router.get('/register', (req, res) =>{
 //New User registration page (form)
 router.post('/register', async (req, res) =>{
     try{
-        // const salt = await bcrypt.genSalt(12)
-        const hashedPasssword = await bcrypt.hash(req.body.password, 12);
-        const newUser = {name: req.body.username, password: hashedPasssword, email: req.body.email};
-        //push to db
-        //render and redirect to dashboard
-        registers.push(newUser);
+        let usererr = [];
+        const newUser = {username: req.body.username, password: req.body.password, password2: req.body.password2, email: req.body.email};
+        
+
+        // form validation
+        if(!newUser.username || !newUser.password || !newUser.email){
+            usererr.push({message: "Please fill out required fields"});
+            console.log(usererr)
+        } else if(newUser.password.length < 6){
+            usererr.push({message: "Password should be at least 6 characters"});
+            console.log(usererr)
+        } else if(newUser.password !== newUser.password2){
+            usererr.push({message: "Password does not match. Please re-enter your password"});
+            console.log(usererr)
+        } else{
+            console.log('success');
+        }
+        
+        if(usererr.length > 0){
+            res.render('register', {usererr});
+        } else {
+            //After validating form
+            const hashedPassword = await bcrypt.hash(newUser.password, 12);
+            console.log(hashedPassword);
+
+
+
+        }
+
+        console.log(newUser.username  + " " + newUser.password + " " + newUser.password2 + " "+ newUser.email);
         res.status(200).send();
+
     } catch(err){
+
         console.log(err);
         res.status(500).send();
     }

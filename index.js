@@ -9,7 +9,7 @@ const methodOverride = require('method-override');
 app.use(express.urlencoded({extended:true}));
 app.set('view engine', 'ejs');
 const beginRowdy = rowdyLogger.begin(app);
-app.use(express.urlencoded({extended: true}));
+app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 app.use(express.static("public"));
 app.use(methodOverride('_method'));
@@ -27,6 +27,10 @@ app.get('/', (req, res) => {
 app.get('/boxoff', (req,res)=>{
     res.render('boxoff', {title: 'boxoff'})
 });
+
+app.get('/dashboard', (req, res) => {
+    res.render('dashboard');
+})
 
 
 

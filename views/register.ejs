@@ -2,16 +2,24 @@
 <div class="container2" id="bodyid2">
     
 </div>
+
+
 <div id="thegrid" class="gridcontainer">
     <form class="regform" action="/users/register" method="POST">
+        <% if(typeof usererr !== 'undefined'){ %>
+            <% usererr.forEach( error => {%>
+                <li id="errormessage"><%= error.message %> </li>
+            <% }) %> 
+        <% } %> 
         <label for="username" id="regusername" class="formlabel">Username</label>
-        <input class="forminput" type="text" name="username" placeholder="Enter your Username"/>
+        <input class="forminput" type="text" name="username" placeholder="Enter your Username" required/>
         <label for="email" class="formlabel">Email</label>
-        <input class="forminput" type="email" name="email" placeholder="Enter your email"/>
+        <input class="forminput" type="email" name="email" placeholder="Enter your email" required/>
         <label  for="password" class="formlabel">Password</label>
-        <input class="forminput" type="password" name="password" placeholder="Enter your password"/>
-        <input class="forminput" type="password" name="password" placeholder="Confirm your password"/>
-        <input class="formsubmit" type="submit" value="Submit" name="submit">
+        <input class="forminput" type="password" name="password" placeholder="Enter your password" required/>
+        <input id="password2" class="forminput" type="password" name="password2" placeholder="Confirm your password"/>
+        <input class="formsubmit" type="submit" value="Sign Up" name="submit">
+        <a id="alreadymembers" href="/users/loginform">Already registered? Login here</a>
     </form>
 
 </div>
