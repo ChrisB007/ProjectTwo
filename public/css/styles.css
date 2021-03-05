@@ -75,6 +75,11 @@ p#wework {
     font-family: 'Abel', sans-serif;
 }
 
+.dash{
+    color: #ffffff;
+}
+
+
 li.howitworkslist {
     position: relative;
     float: left;

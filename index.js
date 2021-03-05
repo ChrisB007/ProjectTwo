@@ -28,10 +28,6 @@ app.get('/boxoff', (req,res)=>{
     res.render('boxoff', {title: 'boxoff'})
 });
 
-app.get('/dashboard', (req, res) => {
-    res.render('dashboard');
-})
-
 
 
 app.listen(PORT, ()=> {
