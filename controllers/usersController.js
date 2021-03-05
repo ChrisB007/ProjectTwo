@@ -1,13 +1,13 @@
 const router = require('express').Router();
 const db = require('../models')
 const bcrypt = require('bcrypt');
-const session = require('express-session');
-const flash = require('express-flash');
+const { Model } = require('sequelize');
+const crypto = require('crypto-js');
+require('dotenv').config();
+
 
 
 //Middleware
-
-
 
 
 //CRUD routes for Users
@@ -22,6 +22,25 @@ router.get('/loginform', (req, res) =>{
     res.render('loginform', {title: 'Some Var'})
 });
 
+router.post('/loginform', async (req, res) =>{
+    try {
+        const user = await db.user.findOne({
+            where: { username: req.body.email}
+        })
+
+        if(user && bcrypt.compareSync(req.body.password, user.password)) {
+            const encryptedId = AES.encrypt(user.id.toString(), process.env.COOKIE_SECRET).toString()
+            res.cookie('userId', encryptedId)
+            res.render('dashboard')
+        } else {
+            res.redirect("/");
+        }
+
+    } catch (err) {
+        console.log(err)
+        res.render('loginform', { errors: "Invalid email/password" })
+    }
+});
 
 //
 router.get('/register', (req, res) =>{
@@ -32,22 +51,24 @@ router.get('/register', (req, res) =>{
 //New User registration page (form)
 router.post('/register', async (req, res) =>{
     try{
-        let errors = [];
-        
-            const hashedPassword = await bcrypt.hash(req.body.password, 12, (err, hash)=>{
-                const newUser = {
-                    username: req.body.username,
-                    password: hash,
-                    email: req.body.email
-                };
+        const hashedPassword = bcrypt.hashSync(req.body.password, 12);
 
-                if (newUser.username && newUser.password && newUser.email){
-                    res.render('dashboard');
-                } else {
-                    errors.push({message: "Please fill out required fields"});
-                    res.redirect('back');
-                }
-        });
+
+        if (req.body.username && req.body.password && req.body.email){
+            const user = await db.user.create({
+                username : req.body.username,
+                password : hashedPassword,
+                email: req.body.email
+            });
+
+            const encryptedId = crypto.AES.encrypt(user.id.toString(), process.env.COOKIE_SECRET).toString()
+            res.cookie('userId', encryptedId)
+            res.render('dashboard');
+            
+        } else {
+            errors.push({message: "Please fill out required fields"});
+            res.redirect('back');
+        }
 
     } catch(err){
 
