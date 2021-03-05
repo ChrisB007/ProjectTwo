@@ -25,15 +25,15 @@ router.get('/loginform', (req, res) =>{
 router.post('/loginform', async (req, res) =>{
     try {
         const user = await db.user.findOne({
-            where: { username: req.body.email}
+            where: { email: req.body.email}
         })
 
         if(user && bcrypt.compareSync(req.body.password, user.password)) {
-            const encryptedId = AES.encrypt(user.id.toString(), process.env.COOKIE_SECRET).toString()
+            const encryptedId = crypto.AES.encrypt(user.id.toString(), process.env.COOKIE_SECRET).toString()
             res.cookie('userId', encryptedId)
-            res.render('dashboard')
+            res.redirect('/dashboard')
         } else {
-            res.redirect("/");
+            res.render('loginform');
         }
 
     } catch (err) {
@@ -53,7 +53,6 @@ router.post('/register', async (req, res) =>{
     try{
         const hashedPassword = bcrypt.hashSync(req.body.password, 12);
 
-
         if (req.body.username && req.body.password && req.body.email){
             const user = await db.user.create({
                 username : req.body.username,
@@ -63,7 +62,7 @@ router.post('/register', async (req, res) =>{
 
             const encryptedId = crypto.AES.encrypt(user.id.toString(), process.env.COOKIE_SECRET).toString()
             res.cookie('userId', encryptedId)
-            res.render('dashboard');
+            res.redirect('/dashboard');
             
         } else {
             errors.push({message: "Please fill out required fields"});
