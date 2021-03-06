@@ -79,6 +79,12 @@ p#wework {
     color: #ffffff;
 }
 
+#userstyles{
+    font-size: 1.7em;
+    color: #fff;
+    width: 150px;
+}
+
 
 li.howitworkslist {
     position: relative;

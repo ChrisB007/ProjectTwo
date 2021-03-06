@@ -65,7 +65,6 @@ router.post('/register', async (req, res) =>{
             res.redirect('/dashboard');
             
         } else {
-            errors.push({message: "Please fill out required fields"});
             res.redirect('back');
         }
 

@@ -58,6 +58,7 @@ app.get('/dashboard', (req,res)=>{
 });
 
 app.get('/logout', (req,res)=>{
+    res.clearCookie('userId');
     res.redirect('/');
 });
 
