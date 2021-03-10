@@ -31,7 +31,7 @@ body{
     justify-content: center;
     align-items: center;
     height: 100px;
-    background-color: black;
+    background-color: #040404;
     color: #fff;
     margin: auto;
     width: 86%;
@@ -74,7 +74,7 @@ img#logo {
 
 p#wework {
     font-size: 3.1em;
-    color: #ffffff;
+    color: #5F6367;
     font-family: 'Abel', sans-serif;
 }
 
@@ -97,11 +97,19 @@ li.howitworkslist {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    color: #ffffff;
+    color: #F9F9FA;
     margin-right: 12px;
     font-family: 'Abel', sans-serif;
     z-index: -1;
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    padding: 16px;
+    font-size: larger;
+    flex-direction: column;
+}
+
+.itworks{
+    display: block;
+    font-size: 1.7em;
 }
 
 .logocontainer{
@@ -117,8 +125,10 @@ li.howitworkslist {
     justify-content: center;
     align-items: center;
     width: 85%;
-    background-color: rgb(0, 0, 0);
+    background-color: #040404;
+    flex-wrap: wrap;
     height: 800px;
+    overflow-y: auto;
     margin: 30px auto;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
     border-radius: 5px;
@@ -218,14 +228,14 @@ input.formsubmit {
     background-size: cover;
     background-position: center;
   }
-  .three-images-wrapper .featured-image-inner:hover,
+  
   .three-images-wrapper .two-images-inner:hover {
     opacity: 0.7;
   }
   .three-images-wrapper .featured-image-inner {
     left: 66px;
     position: absolute;
-    top: 0;
+    top: 36px;
     height: 650px;
     width: 100%;
     -ms-transform: skew(15deg, 0deg);
@@ -269,4 +279,71 @@ input.formsubmit {
   .three-images-wrapper .two-images .two-images-outer:nth-of-type(2) {
     margin-top: 10px;
   }
+
+  #searchapi {
+    position: relative;
+    top: 350px;
+    right: 41%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    flex-direction: column;
+}
+
+input#searchbox {
+    width: 40%;
+    height: 53px;
+    border-radius: 9px;
+    position: relative;
+    left: 20%;
+    text-align: center;
+    font-size: larger;
+}
+
+input#search {
+    width: 11%;
+    height: 39px;
+    margin: 6px;
+    position: relative;
+    left: 20%;
+}
+
+ul.ulgrid {
+    /* width: 90%;
+    height: 754px; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* flex-wrap: wrap; */
+}
+
+li.moviegrid {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    color: #fff;
+    cursor: pointer;
+    /* height: 420px; */
+}
+
+span#changecol {
+    color: green;
+}
+span#titleid {
+    font-size: large;
+    font-weight: 800;
+}
+span#titleid {
+    font-size: large;
+    font-weight: 800;
+    margin: 20px 10px;
+    text-align: center;
+}
+
+img.movimage {
+    width: 100%;
+}
 

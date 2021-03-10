@@ -1,26 +1,31 @@
 <%- include('./partials/header.ejs'); -%>
 <!-- <div class="container2" id="bodyid">
+
+    movies/search
     
 </div> -->
 <div class="three-images-wrapper container2" id="bodyid">
   
 	<div class="three-images">
     <div class="featured-image-outer">
-      <div class="featured-image-inner"
-           style="background-image: url('https://cloud.githubusercontent.com/assets/6893715/21904006/e307032c-d8b6-11e6-9e4a-52dccfedf8a5.jpg')">
+      <div id="featureimage" class="featured-image-inner"
+           style="background-image: url('images/xmen.png')">
       </div>
+      <form id="searchapi" action="/" method="GET" autocomplete="off">
+        <input id="searchbox" type="text" name="search" value="" placeholder="Search for Movies, Streaming, Series shows"/>
+        <input id="search" type="submit" value="Search"/>
+      </form>
     </div>
-
 		<div class="two-images">
       <div class="two-images-outer">
-        <div class="two-images-inner"
-             style="background-image: url('https://cloud.githubusercontent.com/assets/6893715/21904091/52eb581e-d8b7-11e6-9eff-a2d40c3b4304.jpg');">
+        <div id="secimage" class="two-images-inner"
+             style="background-image: url('images/raya.png');">
         </div>
       </div>
 
       <div class="two-images-outer">
-        <div class="two-images-inner"
-             style="background-image: url('https://cloud.githubusercontent.com/assets/6893715/21904081/479edcf6-d8b7-11e6-9c83-b01658fbb473.jpg');">
+        <div id="thirdimage" class="two-images-inner"
+             style="background-image: url('images/coming.png');">
         </div>
       </div>
     </div>
@@ -31,13 +36,23 @@
 <p id="wework" class="howitworks">How it works</p>
 <div class="howitworks">
     <ul class="howitworksorderlist">
-        <li class="howitworkslist">One</li>
-        <li class="howitworkslist">Two</li>
-        <li class="howitworkslist">Three</li>
+        <li class="howitworkslist"><span class="itworks">Participate</span>Search or browse for movies, streaming shows or TV series to see details, stats, budgets, and everything related</li>
+        <li class="howitworkslist"><span class="itworks">...then</span>Click on each movie to get more detail</li>
+        <li class="howitworkslist"><span class="itworks">Finally</span>Search or browse for any movie of your choice to see details, stats, budget, and everything related to the movie</li>
     </ul>
 </div>
 <div id="thegrid" class="gridcontainer">
-
+    <%gridData.forEach(movie => {%>
+            <ul id="gridiron" class="ulgrid">
+                <li class="moviegrid">
+                  <span id="titleid"><div><%=movie.title%></div></span>
+                  <img class="movimage" src="https://image.tmdb.org/t/p/w1280<%=movie.poster_path%>" />
+                    <div><%=movie.popularity%></div>                    
+                    <div><span id="titleid"><%=movie.overview%></span></div>
+                    <div><span id="changecol">Release Date: </span><%=movie.release_date%></div>
+                </li>
+            </ul>
+           <% });%>
 </div>
 
 <%- include('./partials/footer.ejs'); -%>
