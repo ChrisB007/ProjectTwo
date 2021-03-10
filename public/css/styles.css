@@ -127,7 +127,7 @@ li.howitworkslist {
     width: 85%;
     background-color: #040404;
     flex-wrap: wrap;
-    height: 800px;
+    height: 1600px;
     overflow-y: auto;
     margin: 30px auto;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
@@ -197,6 +197,25 @@ input.formsubmit {
     font-size: 2em;
     cursor: pointer;
     font-family: 'Abel', sans-serif;
+}
+
+.beltdiv {
+    height: 30px;
+    background-color: #656B6F;
+    width: 100%;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    align-items: center;
+}
+
+.truncate {
+    width: 300px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-left: 15px;
 }
 
 

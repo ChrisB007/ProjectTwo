@@ -60,9 +60,7 @@ app.get('/', (req, res) => {
                     const image_url = "https://image.tmdb.org/t/p/w200";
                     const path = gridData.poster_path;
                     console.log(image_url + path);
-                   
-                
-                res.render('index', {gridData: gridData, image_url: image_url + path});
+                res.render('index', {gridData: gridData});
                 })
         
             }catch (error) {
