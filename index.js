@@ -51,6 +51,7 @@ app.use('/movies', require('./controllers/movieController'));
 
 //Index - lists all movies
 app.get('/', (req, res) => {
+    console.log(process.env);
     try {
             fetch(feature_url)
                 .then((respose)=> {return respose.json()})
@@ -86,6 +87,7 @@ app.get('/logout', (req,res)=>{
 app.get('/movies', (req, res)=>{
     res.render('movies', {title: 'yay'})
 })
+
 
 //PORT
 app.listen(PORT, ()=> {
