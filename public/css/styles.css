@@ -217,6 +217,18 @@ input.formsubmit {
     text-overflow: ellipsis;
     margin-left: 15px;
 }
+.avote {
+    background-color: #ccc;
+    border-radius: 10px;
+    width: 122px;
+    display: flex;
+    height: 27px;
+    font-size: 16px;
+    color: #000000;
+    justify-content: center;
+    padding-right: 10px;
+    align-items: center;
+}
 
 
 /**/
