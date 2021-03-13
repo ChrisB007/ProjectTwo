@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
 body{
     background: rgb(23,25,29);
-    background: linear-gradient(90deg, rgba(23,25,29,1) 0%, rgba(42,42,42,1) 35%, rgba(0,0,0,1) 100%);
+    /* background: linear-gradient(90deg, rgba(23,25,29,1) 0%, rgba(42,42,42,1) 35%, rgba(0,0,0,1) 100%); */
     margin: 0px;
     font-family: 'Abel', sans-serif;
     overflow-x: hidden;
@@ -52,7 +52,7 @@ div#bodyid2{
 }
 
 img#logo {
-    width: 100px;
+    width: 81px;
     border-radius: 20px;
 }
 
@@ -222,7 +222,7 @@ input.formsubmit {
 /**/
 
 .three-images-wrapper {
-    min-height: 40rem;
+    min-height: 41.4rem;
   }
   .three-images-wrapper .three-images {
     margin-bottom: 4rem;
@@ -278,7 +278,7 @@ input.formsubmit {
     /* Standard syntax */
   }
   .three-images-wrapper .two-images .two-images-outer {
-    min-height: 265px;
+    min-height: 271px;
     overflow: hidden;
     position: relative;
     width: 100%;
@@ -325,6 +325,11 @@ input#search {
     margin: 6px;
     position: relative;
     left: 20%;
+    background-color: #F35B75;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: larger;
 }
 
 ul.ulgrid {
@@ -364,5 +369,19 @@ span#titleid {
 
 img.movimage {
     width: 100%;
+}
+li#middleworklist {
+    width: 500px;
+    height: 300px;
+    bottom: 26px;
+}
+.heroparagraph{
+    color: white;
+    font-size: large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 100px;
 }
 

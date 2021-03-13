@@ -20,6 +20,7 @@
       <div class="two-images-outer">
         <div id="secimage" class="two-images-inner"
              style="background-image: url('images/raya.png');">
+             <!-- <p class="heroparagraph">MoodWatch<br>Contents based on your moodswing</p> -->
         </div>
       </div>
 
@@ -36,7 +37,7 @@
 <div class="howitworks">
     <ul class="howitworksorderlist">
         <li class="howitworkslist"><span class="itworks">Participate</span>Search or browse for movies, streaming shows or TV series to see details, stats, budgets, and everything related</li>
-        <li class="howitworkslist"><span class="itworks">...then</span>Click on each movie to get more detail</li>
+        <li id="middleworklist" class="howitworkslist"><span class="itworks">...then</span>Click on each movie to get more detail</li>
         <li class="howitworkslist"><span class="itworks">Finally</span>Search or browse for any movie of your choice to see details, stats, budget, and everything related to the movie</li>
     </ul>
 </div>
@@ -45,8 +46,8 @@
       <ul id="gridiron" class="ulgrid">
           <li class="moviegrid">
             <span id="titleid"><div><%=movie.title%></div></span>
-            <img class="movimage" src="https://image.tmdb.org/t/p/w1280<%=movie.poster_path%>" />
-              <div class="beltdiv">How Popular: <%=movie.popularity%></div>                    
+            <img class="movimage" src="https://image.tmdb.org/t/p/w1280<%=movie.poster_path%>" alt="<%=movie.title%>"/>
+              <div class="beltdiv">Popularity: <%=movie.popularity%></div>                    
               <div class="truncate"><span id="titleid"><%=movie.overview%></span></div>
               <div><span id="changecol">Release Date: </span><%=movie.release_date%></div>
           </li>

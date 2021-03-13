@@ -1,7 +1,7 @@
 const express = require('express');
 const fetch = require("node-fetch");
 const rowdyLogger = require('rowdy-logger');
-const PORT  = process.env.PORT || 3000;
+const PORT  = process.env.PORT || 4040;
 const app = express();
 const axios = require('axios');
 const methodOverride = require('method-override');
