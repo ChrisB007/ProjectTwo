@@ -8,11 +8,11 @@
   
 	<div class="three-images">
     <div class="featured-image-outer">
-      <div id="featureimage" class="featured-image-inner"
-           style="background-image: url('images/xmen.png')">
+      <div id="featureimage" class="featured-image-inner" style="background-image: url('images/xmen.png')">
+        <span id="herotext">Recommendations based on mood swing</span>
       </div>
       <form id="searchapi" action="/" method="GET" autocomplete="off">
-        <input id="searchbox" type="text" name="search" value="" placeholder="Search for Movies, Streaming, Series shows"/>
+        <input id="searchbox" type="text" name="search" value="" placeholder="How do you feel today - 'Happy, Sad, Lonely...'"/>
         <input id="search" type="submit" value="Search"/>
       </form>
     </div>
@@ -50,7 +50,7 @@
               <div class="beltdiv">Popularity: <%=movie.popularity%></div>                    
               <div class="truncate"><span id="titleid"><%=movie.overview%></span></div>
               <div><span id="changecol">Release Date: </span><%=movie.release_date%></div>
-              <div class="avote"><span class="avote">Average Vote: </span><%=movie.vote_average%></div>
+              <div class="avote"><span class="avote">Average Vote: </span><span id="roundaverage"><%=movie.vote_average%></span></div>
           </li>
       </ul>
     <% });%>

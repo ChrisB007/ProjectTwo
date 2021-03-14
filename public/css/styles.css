@@ -230,6 +230,31 @@ input.formsubmit {
     align-items: center;
 }
 
+span#roundaverage {
+    background-color: #3B393B;
+    color: #FFF;
+    border-radius: 50%;
+    padding: 3px;
+    position: relative;
+    top: 0.5px;
+}
+
+span#herotext {
+    font-size: 7em;
+    position: relative;
+    color: #fff;
+    top: 1.1em;
+    left: 1.6em;
+}
+
+span#herotext2{
+    font-size: 8em;
+    position: relative;
+    color: #fff;
+    top: 1.8em;
+    left: 1.6em;
+}
+
 
 /**/
 
@@ -313,7 +338,7 @@ input.formsubmit {
 
   #searchapi {
     position: relative;
-    top: 350px;
+    top: 480px;
     right: 41%;
     display: flex;
     justify-content: flex-start;
