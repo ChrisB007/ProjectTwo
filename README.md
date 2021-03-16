@@ -2,15 +2,13 @@
 
 **Description**
 ---
-**BoxOff** is an app that allows its users to predict which movie will rule the weekend box office. The prediction is based on few factors / consideration from users:
-1. Lead Actors | Actresses
-2. Directors
-3. Number of Thearters
-4. Release dates
-5. Actors standing in the industry
-6. Actor's previous roles
+**BoxOff** is an app that amongst other things recommend what to watch to it' users. The recommendation is based on few factors 
 
-Note: Winners are determined by weekend box office grosses
+1. Weather
+2. Seasons
+3. User location
+4. State of affairs
+5. Actors standing in the industry
 
 The app is based off an API provided The Movie Database
 - TMDB -
@@ -19,9 +17,10 @@ The app is based off an API provided The Movie Database
 **User stories** <br>
 ---
     App user(s)
-        - User(s) are able to visit the site and run searches based on movie titles or categories.
-        - User(s) can choose one or many movies to predict as box office winner.
-        - Upon selection, full movie details are shown to user(s) (Actors, Directors, Budget e.t.c) to help users make educated guesses.
+        - User(s) are able to visit the site and run searches based on moods (Sad | Happy | Lonely etc).
+        - User(s) can select to watch movies from recommended movie suggestions.
+        - User(s) can personalize based on personal state of affairs after creating an account.
+        - Upon selection, users will be given option to re-direct to streaming service company 
         - In order to participate, user(s) must establish accounts to gain full access
 
 **Technologies used (including APIs)**
@@ -32,14 +31,14 @@ The app is based off an API provided The Movie Database
 
 **MVP goals**
 ---
-* Setup app with search functionalities and display results based on relevant searches.
+* Setup app with fetches to API.
 * Ability to create user account and login.
-* Ability to save sessions to database via user account(s).
 
 **Stretch goals**
 ---
-- Ability to make insightful predictions based on factors surrounding production, actor's stats, budgets, director's stats, awards, 
+- Ability to Search for movies
 - Email notification - To let users know who wins
+- Saving user info to db via user accounts
 
 
 
@@ -66,11 +65,6 @@ The app is based off an API provided The Movie Database
 
 
 
-<!-- **Daily sprints**
----
-**The approach taken**
----
-**Unsolved problems**
----
-**Sources used**
---- -->
+**Installation**
+
+- nodemon index.js
