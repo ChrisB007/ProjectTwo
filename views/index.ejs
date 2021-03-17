@@ -43,16 +43,18 @@
 </div>
 <div id="thegrid" class="gridcontainer">
     <%gridData.forEach(movie => {%>
+      <form action="/" method="POST">
       <ul id="gridiron" class="ulgrid">
           <li class="moviegrid">
             <span id="titleid"><div><%=movie.title%></div></span>
-            <img class="movimage" src="https://image.tmdb.org/t/p/w1280<%=movie.poster_path%>" alt="<%=movie.title%>"/>
-              <div class="beltdiv">Popularity: <%=movie.popularity%></div>                    
+            <input type="submit"><img id="<%= movie.id %> " class="movimage" src="https://image.tmdb.org/t/p/w1280<%=movie.poster_path%>" alt="<%=movie.title%>"/></input>
+              <div class="beltdiv">Popularity: <%=movie.popularity%></div>                   
               <div class="truncate"><span id="titleid"><%=movie.overview%></span></div>
               <div><span id="changecol">Release Date: </span><%=movie.release_date%></div>
               <div class="avote"><span class="avote">Average Vote: </span><span id="roundaverage"><%=movie.vote_average%></span></div>
           </li>
       </ul>
+    </form>
     <% });%>
 </div>
 

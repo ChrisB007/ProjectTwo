@@ -74,6 +74,23 @@ app.get('/', async(req, res) => {
     }
 });
 
+// app.post('/dashboard', async (req, res) => {
+//     try{
+//         const movie = await db.movie.create({
+//             userId: req.cookies.userId,
+//             genre: req.body.id,
+//             moodset: req.body.moodset,
+//             title: req.body.title
+//         }).then(() => {
+//             res.redirect('/savedmovies')
+//         })
+
+//     } catch(err){
+//         console.log(err)
+//     }
+
+// });
+
 //Display Boxoff
 app.get('/boxoff', (req,res)=>{
     res.render('boxoff', {title: 'boxoff'})
