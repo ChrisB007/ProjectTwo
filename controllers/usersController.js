@@ -22,6 +22,10 @@ router.get('/loginform', (req, res) =>{
     res.render('loginform', {title: 'Some Var'})
 });
 
+router.get('/savedmovies', (req, res) =>{
+    res.render('movie', {title: 'Some Var'})
+});
+
 router.post('/loginform', async (req, res) =>{
     try {
         const user = await db.user.findOne({

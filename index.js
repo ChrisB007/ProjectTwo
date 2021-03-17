@@ -49,6 +49,7 @@ app.use(async (req, res, next) => {
 app.use('/users', require('./controllers/usersController'));
 app.use('/movies', require('./controllers/movieController'));
 
+
 // let movieGridList = fetch(feature_url).then(resp => resp.json());
 // let weatherForecast = fetch(weather).then(resp => resp.json());
 // let imageGridList = fetch(image_url).then(resp => resp.json());
@@ -63,8 +64,7 @@ app.get('/', async(req, res) => {
                 const gridData = respose.results; //Array
                 const image_url = "https://image.tmdb.org/t/p/w200";
                 const path = gridData.poster_path;
-                
-
+            
             res.render('index', {gridData: gridData});
             })
     
@@ -79,14 +79,30 @@ app.get('/boxoff', (req,res)=>{
     res.render('boxoff', {title: 'boxoff'})
 });
 
-app.get('/dashboard', (req,res)=>{
-    res.render('boxoff', {title: 'boxoff'})
+app.get('/dashboard', async (req,res)=>{
+
+    try {
+        fetch(feature_url)
+            .then((respose)=> {return respose.json()})
+            .then((respose)=>{
+                const gridData = respose.results; //Array
+                const image_url = "https://image.tmdb.org/t/p/w200";
+                const path = gridData.poster_path;
+            
+            res.render('dashboard', {gridData: gridData});
+            })
+    
+        }catch (error) {
+    console.log(error)
+        
+    }
 });
 
 app.get('/logout', (req,res)=>{
     res.clearCookie('userId');
     res.redirect('/');
 });
+
 
 app.get('/movies', async (req, res)=>{
 
@@ -108,6 +124,40 @@ app.get('/movies', async (req, res)=>{
         }catch (error) {
             console.log(error)      
     }
+})
+
+
+
+app.get('/movies/:id', async (req, res) => {
+    
+    try {
+        fetch(feature_url)
+            .then((response)=> {
+                return response.json()
+            })
+            .then((response)=>{
+                const {id} = req.params;
+                const resultArray = response.results;
+
+
+                const foundMovie = resultArray.find((result) => result.id === id );
+                console.log(foundMovie);
+
+                // resultArray.forEach(element => {
+                //     console.log(element.id);
+                // });
+
+                res.send(foundMovie);
+            })
+    
+        }catch (error) {
+            console.log(error)      
+    }
+    
+})
+
+app.get('/movie', (req, res) => {
+    res.render('movie')
 })
 
 

@@ -27,6 +27,32 @@ body{
     z-index: 2;
 }
 
+.gridcontainertwo{
+    display: flex;
+    justify-content: center;
+    padding-left: 20px;
+    align-items: center;
+    width: 85%;
+    background-color: #040404;
+    flex-wrap: wrap;
+    height: 800px;
+    overflow-y: auto;
+    margin: 30px auto;
+    box-shadow: rgb(0 0 0 / 30%) 0px 19px 38px, rgb(0 0 0 / 22%) 0px 15px 12px;
+    border-radius: 32px;
+}
+
+.singlemovies {
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+}
+
+.detail.information {
+    background-color: rgb(255, 255, 255);
+    width: 60%;
+}
+
 .containertwo{
     display: flex;
     justify-content: flex-start;
@@ -36,6 +62,14 @@ body{
     background-image: linear-gradient(to bottom, #060606, #050504, #030303, #020201, #000000);
     width: 100%;
     z-index: 2;
+}
+.imageposter{
+    display: flex;
+    justify-content: flex-start;
+}
+
+img.movieimage {
+    width: 16rem;
 }
 
 .footer{
