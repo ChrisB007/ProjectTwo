@@ -95,7 +95,7 @@ router.get('/:id', async (req, res) => {
     // these is the found user's movies (as a array)
     console.log(user.movies)
     // you need to send the user's movies
-    res.send('render the user and thier saved movies')
+    res.send('render the user and their saved movies')
   });
 
 // Show edit page for user
