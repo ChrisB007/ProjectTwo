@@ -74,10 +74,46 @@ app.get('/', async(req, res) => {
     }
 });
 
+
+
+
+app.post('/dashboard', async (req, res) => {
+    try{
+      console.log(res.locals.user.id)
+        const movie = await db.movie.create({
+            userId: res.locals.user.id,
+            genre: req.body.id,
+            moodset: req.body.moodset,
+            title: req.body.title
+        })
+        // don't need the .then() if you are using async/await
+        // redirect to the GET /users/:id to show the user thier saved movies
+        res.redirect(`/users/${res.locals.user.id}`)
+    } catch(err){
+        console.log(err)
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // app.post('/dashboard', async (req, res) => {
 //     try{
 //         const movie = await db.movie.create({
-//             userId: req.cookies.userId,
+//             userId: req.locals.users.id,
 //             genre: req.body.id,
 //             moodset: req.body.moodset,
 //             title: req.body.title
