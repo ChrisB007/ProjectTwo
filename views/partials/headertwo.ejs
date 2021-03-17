@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css"/>
+    <title>BoxOff</title>
+</head>
+<body>
+    <div id="nav" class="containertwo">
+        <nav class="navclass">
+            <div class="logocontainer">
+                <a href="/"><img id="logo" src="/images/logo.png" alt="logo"/></a>
+            </div>
+            <div>
+                <% if(user) { %>
+                    <ul class="navlist">
+                        <span id="userstyles">Hello <%= user.username %></span> 
+                        <a href="../logout"><li class="lists">Log Out</li></a>                            
+                    </ul>
+                <% } else { %>
+                    <ul class="navlist">
+                        <!-- <a href="../users"><li class="lists">User Activities</li></a> -->
+                        <a href="../users/loginform"><li class="lists">Login</li></a>
+                        <a href="../users/register"><li class="lists">Sign Up</li></a>
+                    </ul>
+                <% } %>
+            </div>
+        </nav>
+    </div>

@@ -14,7 +14,7 @@ const TMDB_API_KEY = process.env.TMDB_API_KEY;
 const WEATHER_API = process.env.WEATHER_API;
 
 
-const search_url = `https://api.themoviedb.org/3/search/movie?api_key=${TMDB_API_KEY}`; //Search
+const search_url = `https://api.themoviedb.org/3/search/movie?api_key=${TMDB_API_KEY}&query=`; //Search
 const feature_url = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${TMDB_API_KEY}&page=1`; //Feature
 const image_url = `https://image.tmdb.org/t/p/w1280`;
 const weather = `http://api.openweathermap.org/data/2.5/weather?&appid=${WEATHER_API}&q=Brooklyn`;
@@ -57,22 +57,14 @@ app.use('/movies', require('./controllers/movieController'));
 //Index - lists all movies
 app.get('/', async(req, res) => {
     try {
-
-        // const promiseAll = await Promise.all([movieGridList,weatherForecast, imageGridList]);
-
-        // promiseAll[0].then(data){
-        //     const gridData = data.results;
-        //     const image_url = "https://image.tmdb.org/t/p/w200";
-        //     const path = gridData.poster_path;
-            
-        // }
-
         fetch(feature_url)
             .then((respose)=> {return respose.json()})
             .then((respose)=>{
                 const gridData = respose.results; //Array
                 const image_url = "https://image.tmdb.org/t/p/w200";
                 const path = gridData.poster_path;
+                
+
             res.render('index', {gridData: gridData});
             })
     
@@ -96,8 +88,26 @@ app.get('/logout', (req,res)=>{
     res.redirect('/');
 });
 
-app.get('/movies', (req, res)=>{
-    res.render('movies', {title: 'yay'})
+app.get('/movies', async (req, res)=>{
+
+    const searchTerm = search_url+req.query.search;
+
+    try {
+        fetch(searchTerm)
+            .then((response)=> {
+                return response.json()
+            })
+            .then((response)=>{
+                const movieResult = response.results
+                const image_url = "https://image.tmdb.org/t/p/w200";
+                const path = movieResult.poster_path;
+
+                res.render('movies', {movieResult: movieResult})
+            })
+    
+        }catch (error) {
+            console.log(error)      
+    }
 })
 
 
