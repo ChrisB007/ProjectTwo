@@ -10,6 +10,8 @@
             <span id="titleid"><div><%=movie.title%></div></span>
             <img id="<%= movie.id %> " class="movimage" src="https://image.tmdb.org/t/p/w1280<%=movie.poster_path%>" alt="<%=movie.title%>"/>
             <input type="submit" value="Save movies"/>
+            <input type="hidden" name="title" value="<%= movie.title %> "/>
+            <input type="hidden" name="genre" value="<%= movie.genre %> "/>
               <div class="beltdiv">Popularity: <%=movie.popularity%></div>                    
               <div class="truncate"><span id="titleid"><%=movie.overview%></span></div>
               <div><span id="changecol">Release Date: </span><%=movie.release_date%></div>

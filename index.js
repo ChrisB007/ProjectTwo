@@ -77,17 +77,18 @@ app.get('/', async(req, res) => {
 
 
 
+
 app.post('/dashboard', async (req, res) => {
     try{
-      console.log(res.locals.user.id)
+    //   console.log(res.locals.user.id)
         const movie = await db.movie.create({
             userId: res.locals.user.id,
             genre: req.body.id,
             moodset: req.body.moodset,
-            title: req.body.title
+            title: `${req.body.title}`
         })
         // don't need the .then() if you are using async/await
-        // redirect to the GET /users/:id to show the user thier saved movies
+        // redirect to the GET /users/:id to show the user their saved movies
         res.redirect(`/users/${res.locals.user.id}`)
     } catch(err){
         console.log(err)
@@ -96,36 +97,6 @@ app.post('/dashboard', async (req, res) => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// app.post('/dashboard', async (req, res) => {
-//     try{
-//         const movie = await db.movie.create({
-//             userId: req.locals.users.id,
-//             genre: req.body.id,
-//             moodset: req.body.moodset,
-//             title: req.body.title
-//         }).then(() => {
-//             res.redirect('/savedmovies')
-//         })
-
-//     } catch(err){
-//         console.log(err)
-//     }
-
-// });
 
 //Display Boxoff
 app.get('/boxoff', (req,res)=>{

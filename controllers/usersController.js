@@ -80,23 +80,40 @@ router.post('/register', async (req, res) =>{
 
 });
 
-//Show information about one user
-router.get('/:id', async (req, res) => {
-    // find one user from the req.params
-    const user = await db.user.findOne({
-      where: {
-        id: req.params.id //url parameter variable
-      },
-      // include the user's movies
-      include: [db.movie]
+
+router.get(`/:id` , async (req, res)=>{
+    console.log("route hit")
+    const profile = await db.movie.findAll({
+        where: {
+            userId: req.params.id,
+        }
     })
-    // this is the found user
-    console.log(user)
-    // these is the found user's movies (as a array)
-    console.log(user.movies)
-    // you need to send the user's movies
-    res.send('render the user and their saved movies')
-  });
+    res.render(`users`, {profile});
+    
+})
+
+//Show information about one user
+// router.get('/:id', async (req, res) => {
+//     // find one user from the req.params
+//     const user = await db.user.findOne({
+//       where: {
+//         id: req.params.id //url parameter variable
+//       },
+//       // include the user's movies
+//       include: [db.movie]
+//     })
+//     // this is the found user
+//     console.log(user)
+//     // these is the found user's movies (as a array)
+//     console.log(user.movies)
+//     // you need to send the user's movies
+//     res.render('savedmovies', {user: user})
+//   });
+
+
+
+
+
 
 // Show edit page for user
 router.get('/:id/edit', (req, res) =>{
