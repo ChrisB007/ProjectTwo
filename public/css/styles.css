@@ -48,6 +48,10 @@ body{
     width: 40%;
 }
 
+#selectedtitle{
+    color:#ffffff
+}
+
 .detail.information {
     background-color: rgb(255, 255, 255);
     width: 60%;
